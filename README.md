@@ -12,21 +12,21 @@ However, there are other scenarios in which Affix could be used to apply custom 
 
 This scenario is not addressed by `position:sticky` - and this is where the small ScrollPos-Styler script comes to the rescue.
 
-Look at the [demo]() to get a better understanding of the effect.
+Look at the [demo](https://github.com/acch/scrollpos-styler/tree/master/demo) to get a better understanding of the effect.
 
 ## Usage
 
-Simply import the ScrollPosStyler.js script into your HTML page at the very end of the body element. Then, add the `id="sps"` tag to the element which you want to style. Define the two CSS classes `.sps--abv` and `.sps--blw` and you're all set.
+Simply import the `ScrollPosStyler.js` script into your HTML page at the very end of the body element. Then, add the `id="sps"` parameter to the element which you want to style. Define the two CSS classes `.sps--abv` and `.sps--blw` and you're all set!
 
-The `.sps--abv` class will be added to your element when the window is scrolled above the defined position, and `.sps--blw` will be applied when it is scrolled below the position.
+The `.sps--abv` class will be added to your element when the window is scrolled above the defined position, and `.sps--blw` will be applied when it is scrolled below that position.
 
 The default scroll position to trigger the style is 1px, meaning that as soon as the user starts scrolling the CSS class will be toggled. This can be changed with the `scrollOffsetY` variable.
 
-You should add the `.sps--abv` class to the element in your HTML code already, to avoid any flickering when JavaScript is initially being executed.
+You should add the `.sps--abv` class to the element in your HTML code already, to avoid any flickering when JavaScript is initially executed.
 
-### Dependecies
+### Dependencies
 
-None. The script does not require jQuery or other JavaScript libraries.
+None. The script does not require jQuery or other JavaScript libraries. While being designed for Bootstrap, it does not require it.
 
 ### Browser support
 
