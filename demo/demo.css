@@ -1,0 +1,24 @@
+body {
+  background-color: #fff;
+  color: #000;
+  padding-top: 2em;
+}
+
+.navbar {
+  padding: 1em .5em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.sps--abv {
+  background-color: transparent;
+  color: #000;
+}
+
+.sps--blw {
+  background-color: #333;
+  color: #fff;
+}

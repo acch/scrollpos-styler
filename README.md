@@ -1,2 +1,38 @@
-# scrollpos-styler
-JavaScript to add custom CSS class to a HTML element depending on scroll position
+# ScrollPos-Styler
+
+Simple JavaScript to add a custom CSS class to an HTML element depending on the window's scroll position. One CSS class is added when scrolling below a certain position, and another one is added when scrolling above that position.
+
+## Background and Motivation
+
+[Bootstrap](http://getbootstrap.com) v3 has a JavaScript component named Affix. [Affix](http://getbootstrap.com/javascript/#affix) can be used to modify CSS properties of an element when reaching a certain scroll position. The main use case for it is to change positioning of the element when scrolling past the element - i.e. switching from relative to fixed positioning so that the element remains visible when otherwise the user would scroll past it.
+
+With v4 of Bootstrap, the Affix component is dropped in favor of `position:sticky` - which can be used to address the above use case. Many modern browsers have native support for it already, and [polyfills](http://html5please.com/#sticky) are available for browsers which do not natively support `position:sticky`.
+
+However, there are other scenarios in which Affix could be used to apply custom styles / classes to elements when reaching certain scroll positions. A common example is changing the text color and background of a fixed navigation bar upon scrolling. Initially (when the page is scrolled to the very top), the navigation bar seamlessly integrates into the page - i.e. it is flat, transparent and without any shadow. When scrolling downwards, the navigation bar 'stands out' so that it seems to be hovering above the page. The background (and text) color might change, it might drop shadow, etc.
+
+This scenario is not addressed by `position:sticky` - and this is where the small ScrollPos-Styler script comes to the rescue.
+
+Look at the [demo]() to get a better understanding of the effect.
+
+## Usage
+
+Simply import the ScrollPosStyler.js script into your HTML page at the very end of the body element. Then, add the `id="sps"` tag to the element which you want to style. Define the two CSS classes `.sps--abv` and `.sps--blw` and you're all set.
+
+The `.sps--abv` class will be added to your element when the window is scrolled above the defined position, and `.sps--blw` will be applied when it is scrolled below the position.
+
+The default scroll position to trigger the style is 1px, meaning that as soon as the user starts scrolling the CSS class will be toggled. This can be changed with the `scrollOffsetY` variable.
+
+You should add the `.sps--abv` class to the element in your HTML code already, to avoid any flickering when JavaScript is initially being executed.
+
+### Dependecies
+
+None. The script does not require jQuery or other JavaScript libraries.
+
+### Browser support
+
+The script uses [`Window.requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame), as well as [`Element.classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList). This means that it is supported by fairly modern browsers, only (IE 10+, Safari 6.1+, Firefox 23+). I don't plan on supporting older browsers, thus don't plan to implement any workarounds.
+
+If you need to support older browsers then these links may provide valuable information:
+- http://www.html5rocks.com/en/tutorials/speed/animations/
+- http://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript
+- https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
