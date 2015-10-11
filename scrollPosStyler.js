@@ -36,7 +36,7 @@ function onScroll() {
       onTop = true;
 
       // asynchronuously add style / class to element
-      requestAnimationFrame(aboveScrollPos);
+      window.requestAnimationFrame(aboveScrollPos);
     }
   }
 };
