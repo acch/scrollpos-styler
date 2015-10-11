@@ -12,7 +12,7 @@ However, there are other scenarios in which Affix could be used to apply custom 
 
 This scenario is not addressed by `position:sticky` - and this is where the small ScrollPos-Styler script comes to the rescue.
 
-Look at the [demo](https://github.com/acch/scrollpos-styler/tree/master/demo) to get a better understanding of the effect.
+Look at the [demo](http://acch.github.io/scrollpos-styler/demo/demo.html) to get a better understanding of the effect.
 
 ## Usage
 
