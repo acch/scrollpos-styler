@@ -39,4 +39,4 @@ If you need to support older browsers then these links may provide valuable info
 
 ## Copyright and license
 
-Copyright 2015 Achim Christ, released under the [MIT license](https://github.com/acch/scrollpos-styler/blob/master/LICENSE).
+Copyright 2015 Achim Christ, released under the [MIT license](LICENSE).
