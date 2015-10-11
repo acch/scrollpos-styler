@@ -30,9 +30,13 @@ None. The script does not require jQuery or other JavaScript libraries. While be
 
 ### Browser support
 
-The script uses [`Window.requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame), as well as [`Element.classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList). This means that it is supported by fairly modern browsers, only (IE 10+, Safari 6.1+, Firefox 23+). I don't plan on supporting older browsers, thus don't plan to implement any workarounds.
+The script uses [`Window.requestAnimationFrame()`](https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame), as well as [`Element.classList`](https://developer.mozilla.org/en-US/docs/Web/API/Element/classList). This means that it is supported by fairly modern browsers, only (IE 10+, Firefox 23+, Chrome 24+, Safari 6.1+). I don't plan on supporting older browsers, thus don't plan to implement any workarounds.
 
 If you need to support older browsers then these links may provide valuable information:
 - http://www.html5rocks.com/en/tutorials/speed/animations/
 - http://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+
+## Copyright and license
+
+Copyright 2015 Achim Christ, released under the [MIT license](https://github.com/acch/scrollpos-styler/blob/master/LICENSE).
