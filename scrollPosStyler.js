@@ -33,8 +33,8 @@
         // remember that we are below scroll position
         onTop = false;
 
-        // asynchronuously add style / class to element
-        requestAnimationFrame(belowScrollPos);
+        // asynchronuously add style / class to elements
+        window.requestAnimationFrame(belowScrollPos);
 
       // if we were below, and are now above scroll position...
       } else if (!onTop && scrollPosY <= scrollOffsetY) {
@@ -44,7 +44,7 @@
         // remember that we are above scroll position
         onTop = true;
 
-        // asynchronuously add style / class to element
+        // asynchronuously add style / class to elements
         window.requestAnimationFrame(aboveScrollPos);
       }
     }
@@ -73,6 +73,9 @@
     // resume accepting scroll events
     busy = false;
   };
+
+  // add initial style / class to elements
+  window.requestAnimationFrame(aboveScrollPos);
 
   // register for window scroll events
   window.addEventListener('scroll', onScroll, false);
