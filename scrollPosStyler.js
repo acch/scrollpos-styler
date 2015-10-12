@@ -16,8 +16,8 @@
       // toggle style / class when scrolling below this position (in px)
       scrollOffsetY = 1,
 
-      // choose element to apply style / class to
-      myElement = document.getElementById("sps");
+      // choose elements to apply style / class to
+      elements = document.getElementsByClassName("sps");
 
   function onScroll() {
     // ensure that events don't stack
@@ -51,18 +51,24 @@
   };
 
   function aboveScrollPos() {
-    // add style / class to element
-    myElement.classList.add("sps--abv");
-    myElement.classList.remove("sps--blw");
+    // iterate over elements
+    for (var elem of elements) {
+      // add style / class to element
+      elem.classList.add("sps--abv");
+      elem.classList.remove("sps--blw");
+    }
 
     // resume accepting scroll events
     busy = false;
   };
 
   function belowScrollPos() {
-    // add style / class to element
-    myElement.classList.add("sps--blw");
-    myElement.classList.remove("sps--abv");
+    // iterate over elements
+    for (var elem of elements) {
+      // add style / class to element
+      elem.classList.add("sps--blw");
+      elem.classList.remove("sps--abv");
+    }
 
     // resume accepting scroll events
     busy = false;
