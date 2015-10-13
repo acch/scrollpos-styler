@@ -24,6 +24,8 @@ The default scroll position to trigger the style is 1px, meaning that as soon as
 
 You should add the `.sps--abv` class to the element in your HTML code already, to avoid any flickering when JavaScript is initially executed.
 
+To style elements which were created after the page was initially loaded (i.e. using JavaScript), a public initialization function is available. Simply run `ScrollPosStyler.init()` to add the appropriate class based on the current scroll position. [Demo2](http://acch.github.io/scrollpos-styler/demo/demo2.html) shows you this in action.
+
 ### Dependencies
 
 None. The script does not require jQuery or other JavaScript libraries. While being designed for Bootstrap, it does not require it.
