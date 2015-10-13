@@ -9,7 +9,9 @@
 var ScrollPosStyler = (function() {
   "use strict";
 
-  // private variables
+  /* ====================
+   * private variables
+   * ==================== */
   var scrollPosY = 0,
       busy = false,
       onTop = true,
@@ -20,7 +22,10 @@ var ScrollPosStyler = (function() {
       // choose elements to apply style / class to
       elements = document.getElementsByClassName("sps");
 
-  // private funcion to check scroll position
+
+  /* ====================
+   * private funcion to check scroll position
+   * ==================== */
   function onScroll() {
     // ensure that events don't stack
     if (!busy) {
@@ -52,7 +57,10 @@ var ScrollPosStyler = (function() {
     }
   };
 
-  // private function to style elements when above scroll position
+
+  /* ====================
+   * private function to style elements when above scroll position
+   * ==================== */
   function aboveScrollPos() {
     // iterate over elements
     for (var elem of elements) {
@@ -65,7 +73,9 @@ var ScrollPosStyler = (function() {
     busy = false;
   };
 
-  // private function to style elements when below scroll position
+  /* ====================
+   * private function to style elements when below scroll position
+   * ==================== */
   function belowScrollPos() {
     // iterate over elements
     for (var elem of elements) {
@@ -78,13 +88,20 @@ var ScrollPosStyler = (function() {
     busy = false;
   };
 
+
+  /* ====================
+   * main initialization
+   * ==================== */
   // add initial style / class to elements
   window.requestAnimationFrame(aboveScrollPos);
 
   // register for window scroll events
   window.addEventListener('scroll', onScroll, false);
 
-  // public function to initially style elements based on scroll position
+
+  /* ====================
+   * public function to initially style elements based on scroll position
+   * ==================== */
   return {
     init: function() {
       // suspend accepting scroll events
