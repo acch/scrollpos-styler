@@ -1,5 +1,5 @@
 /* ========================================================================
- * ScrollPos-Styler v0.3
+ * ScrollPos-Styler v0.4
  * https://github.com/acch/scrollpos-styler
  * ========================================================================
  * Copyright 2015 Achim Christ
@@ -63,10 +63,11 @@ var ScrollPosStyler = (function() {
    * ==================== */
   function aboveScrollPos() {
     // iterate over elements
-    for (var elem of elements) {
+    // for (var elem of elements) {
+    for (var i = 0; elements[i]; ++i) { // chrome workaround
       // add style / class to element
-      elem.classList.add("sps--abv");
-      elem.classList.remove("sps--blw");
+      elements[i].classList.add("sps--abv");
+      elements[i].classList.remove("sps--blw");
     }
 
     // resume accepting scroll events
@@ -78,10 +79,11 @@ var ScrollPosStyler = (function() {
    * ==================== */
   function belowScrollPos() {
     // iterate over elements
-    for (var elem of elements) {
+    // for (var elem of elements) {
+    for (var i = 0; elements[i]; ++i) { // chrome workaround
       // add style / class to element
-      elem.classList.add("sps--blw");
-      elem.classList.remove("sps--abv");
+      elements[i].classList.add("sps--blw");
+      elements[i].classList.remove("sps--abv");
     }
 
     // resume accepting scroll events
