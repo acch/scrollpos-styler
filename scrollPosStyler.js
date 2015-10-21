@@ -30,7 +30,7 @@ var ScrollPosStyler = (function() {
     // ensure that events don't stack
     if (!busy) {
       // get current scroll position from window
-      scrollPosY = window.scrollY;
+      scrollPosY = window.pageYOffset;
 
       // if we were above, and are now below scroll position...
       if (onTop && scrollPosY > scrollOffsetY) {
