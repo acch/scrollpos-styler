@@ -1,5 +1,5 @@
 /* ========================================================================
- * ScrollPos-Styler v0.4
+ * ScrollPos-Styler v0.5
  * https://github.com/acch/scrollpos-styler
  * ========================================================================
  * Copyright 2015 Achim Christ
@@ -110,7 +110,7 @@ var ScrollPosStyler = (function() {
       busy = true;
 
       // get current scroll position from window
-      scrollPosY = window.scrollY;
+      scrollPosY = window.pageYOffset;
 
       // if we are below scroll position...
       if (scrollPosY > scrollOffsetY) {
