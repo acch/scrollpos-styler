@@ -92,19 +92,9 @@ var ScrollPosStyler = (function() {
 
 
   /* ====================
-   * main initialization
-   * ==================== */
-  // add initial style / class to elements
-  window.requestAnimationFrame(aboveScrollPos);
-
-  // register for window scroll events
-  window.addEventListener('scroll', onScroll, false);
-
-
-  /* ====================
    * public function to initially style elements based on scroll position
    * ==================== */
-  return {
+  var pub = {
     init: function() {
       // suspend accepting scroll events
       busy = true;
@@ -130,4 +120,20 @@ var ScrollPosStyler = (function() {
       }
     }
   };
+
+
+  /* ====================
+   * main initialization
+   * ==================== */
+  // add initial style / class to elements when DOM is ready
+  document.addEventListener("DOMContentLoaded", function() {
+    // defer initialization to allow browser to restore scroll position
+    window.setTimeout(pub.init, 1);
+  }, false);
+
+  // register for window scroll events
+  window.addEventListener("scroll", onScroll, false);
+
+
+  return pub;
 })();
