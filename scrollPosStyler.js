@@ -129,10 +129,10 @@ var ScrollPosStyler = (function() {
   document.addEventListener("DOMContentLoaded", function() {
     // defer initialization to allow browser to restore scroll position
     window.setTimeout(pub.init, 1);
-  }, false);
+  });
 
   // register for window scroll events
-  window.addEventListener("scroll", onScroll, false);
+  window.addEventListener("scroll", onScroll);
 
 
   return pub;
