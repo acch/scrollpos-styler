@@ -7,5 +7,9 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/acch/scrollpos-styler",
-  "ignore": []
+  "ignore": [
+    "/.*",
+    "demo",
+    "CONTRIBUTING.md"
+  ]
 }
