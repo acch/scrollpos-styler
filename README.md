@@ -14,6 +14,14 @@ This scenario is not addressed by `position:sticky` - and this is where the smal
 
 Look at the [demo](http://acch.github.io/scrollpos-styler/demo/demo.html) to get a better understanding of the effect.
 
+## Installation
+
+Several options are available:
+
+- Download the latest [release](https://github.com/acch/scrollpos-styler/releases)
+- Clone the repo: `git clone https://github.com/acch/scrollpos-styler.git`
+- Install with [Bower](http://bower.io/): `bower install scrollpos-styler`
+
 ## Usage
 
 Simply import the `ScrollPosStyler.js` script into your HTML page at the very end of the body element. Then, add the `.sps` class to the element(s) which you want to style. Define the two CSS classes `.sps--abv` and `.sps--blw` and you're all set!
