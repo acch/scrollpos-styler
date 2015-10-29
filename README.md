@@ -24,7 +24,7 @@ Several options are available:
 
 ## Usage
 
-Simply import the `ScrollPosStyler.js` script into your HTML page at the very end of the body element. Then, add the `.sps` class to the element(s) which you want to style. Define the two CSS classes `.sps--abv` and `.sps--blw` and you're all set!
+Simply import the `scrollPosStyler.js` script into your HTML page at the very end of the body element. Then, add the `.sps` class to the element(s) which you want to style. Define the two CSS classes `.sps--abv` and `.sps--blw` and you're all set!
 
 The `.sps--abv` class will be added to your element when the window is scrolled above the defined position, and `.sps--blw` will be applied when it is scrolled below that position.
 
