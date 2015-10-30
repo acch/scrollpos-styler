@@ -9,7 +9,7 @@
 // JSHint directives
 /* exported ScrollPosStyler */
 
-var ScrollPosStyler = (function() {
+var ScrollPosStyler = (function(document, window) {
   "use strict";
 
   /* ====================
@@ -139,4 +139,4 @@ var ScrollPosStyler = (function() {
 
 
   return pub;
-})();
+})(document, window);
