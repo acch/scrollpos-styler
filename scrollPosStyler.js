@@ -6,6 +6,9 @@
  * Licensed under MIT (https://github.com/acch/scrollpos-styler/blob/master/LICENSE)
  * ======================================================================== */
 
+// JSHint directives
+/* exported ScrollPosStyler */
+
 var ScrollPosStyler = (function() {
   "use strict";
 
@@ -55,7 +58,7 @@ var ScrollPosStyler = (function() {
         window.requestAnimationFrame(aboveScrollPos);
       }
     }
-  };
+  }
 
 
   /* ====================
@@ -72,7 +75,7 @@ var ScrollPosStyler = (function() {
 
     // resume accepting scroll events
     busy = false;
-  };
+  }
 
   /* ====================
    * private function to style elements when below scroll position
@@ -88,7 +91,7 @@ var ScrollPosStyler = (function() {
 
     // resume accepting scroll events
     busy = false;
-  };
+  }
 
 
   /* ====================
