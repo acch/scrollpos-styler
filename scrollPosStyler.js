@@ -1,5 +1,5 @@
 /* ========================================================================
- * ScrollPos-Styler v0.5
+ * ScrollPos-Styler v0.6
  * https://github.com/acch/scrollpos-styler
  * ========================================================================
  * Copyright 2015 Achim Christ
