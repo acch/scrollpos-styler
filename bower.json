@@ -8,8 +8,8 @@
   "main": "scrollPosStyler.js",
   "ignore": [
     "/.*",
-    "bower.json",
     "demo",
+    "bower.json",
     "CONTRIBUTING.md"
   ]
 }
