@@ -14,6 +14,10 @@ This scenario is not addressed by `position:sticky` - and this is where the smal
 
 Look at the [demo](http://acch.github.io/scrollpos-styler/demo/demo.html) to get a better understanding of the effect.
 
+## Differentiation and Limitations
+
+This script is designed to modify attributes OTHER THAN an element's position. It doesn't work well when changing positioning of an element. Switching between `position:relative` and `position:fixed` is exactly what `position:sticky` is designed for, and this script in no viable alternative. Refer to the [documentation](https://developer.mozilla.org/en-US/docs/Web/CSS/position) for details, and use [polyfills](http://html5please.com/#sticky) for older browsers.
+
 ## Installation
 
 Several options are available:
