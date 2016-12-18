@@ -25,6 +25,7 @@ Several options are available:
 - Download the latest [release](https://github.com/acch/scrollpos-styler/releases/latest)
 - Clone the repo: `git clone https://github.com/acch/scrollpos-styler.git`
 - Install with [Bower](http://bower.io/): `bower install scrollpos-styler`
+- Install with [npm](https://www.npmjs.com/): `npm install scrollpos-styler`
 
 ## Usage
 
