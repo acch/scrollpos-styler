@@ -1,0 +1,25 @@
+{
+  "name": "scrollpos-styler",
+  "version": "0.6.0",
+  "description": "JavaScript to add custom CSS class to a HTML element depending on scroll position",
+  "main": "scrollPosStyler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acch/scrollpos-styler.git"
+  },
+  "keywords": [
+    "scroll",
+    "position",
+    "bootstrap",
+    "4"
+  ],
+  "author": "Achim Christ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/acch/scrollpos-styler/issues"
+  },
+  "homepage": "https://github.com/acch/scrollpos-styler#readme"
+}
