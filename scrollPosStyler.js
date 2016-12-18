@@ -137,6 +137,5 @@ var ScrollPosStyler = (function(document, window) {
   // register for window scroll events
   window.addEventListener("scroll", onScroll);
 
-
   return pub;
 })(document, window);
