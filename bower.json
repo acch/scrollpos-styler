@@ -8,7 +8,17 @@
   "ignore": [
     "/.*",
     "demo",
-    "bower.json",
+    "package.json",
     "CONTRIBUTING.md"
-  ]
+  ],
+  "keywords": [
+    "scroll",
+    "position",
+    "bootstrap",
+    "4"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acch/scrollpos-styler.git"
+  }
 }
