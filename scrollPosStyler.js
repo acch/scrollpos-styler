@@ -23,7 +23,13 @@ var ScrollPosStyler = (function(document, window) {
       scrollOffsetY = 1,
 
       // choose elements to apply style / class to
-      elements = document.getElementsByClassName("sps");
+      elements = document.getElementsByClassName("sps"),
+
+      // style / class to apply to elements when above scroll position
+      classAbove = "sps--abv",
+
+      // style / class to apply to elements when below scroll position
+      classBelow = "sps--blw";
 
 
   /* ====================
@@ -69,8 +75,8 @@ var ScrollPosStyler = (function(document, window) {
     // for (var elem of elements) {
     for (var i = 0; elements[i]; ++i) { // chrome workaround
       // add style / class to element
-      elements[i].classList.add("sps--abv");
-      elements[i].classList.remove("sps--blw");
+      elements[i].classList.add(classAbove);
+      elements[i].classList.remove(classBelow);
     }
 
     // resume accepting scroll events
@@ -85,8 +91,8 @@ var ScrollPosStyler = (function(document, window) {
     // for (var elem of elements) {
     for (var i = 0; elements[i]; ++i) { // chrome workaround
       // add style / class to element
-      elements[i].classList.add("sps--blw");
-      elements[i].classList.remove("sps--abv");
+      elements[i].classList.add(classBelow);
+      elements[i].classList.remove(classAbove);
     }
 
     // resume accepting scroll events
