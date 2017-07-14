@@ -33,7 +33,7 @@ Simply import the `scrollPosStyler.js` script into your HTML page at the very en
 
 The `.sps--abv` class will be added to your element when the window is scrolled above the defined position, and `.sps--blw` will be applied when it is scrolled below that position.
 
-The default scroll position to trigger the style is 1px, meaning that as soon as the user starts scrolling the CSS class will be toggled. This can be changed with the `scrollOffsetY` variable.
+The default scroll position to trigger the style is 1px, meaning that as soon as the user starts scrolling the CSS class will be toggled. This can be changed by adding the `data-sps-offset` tag in HTML and specifying an offset or by modifying the `scrollOffsetY` variable in JavaScript.
 
 You should add the `.sps--abv` class to the element in your HTML code already, to avoid any flickering when JavaScript is initially executed.
 
