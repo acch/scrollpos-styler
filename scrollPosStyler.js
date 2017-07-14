@@ -21,14 +21,17 @@ var ScrollPosStyler = (function(document, window) {
       // toggle style / class when scrolling below this position (in px)
       scrollOffsetY = 1,
 
+      // class used to apply scrollPosStyler to
+      spsClass = "sps",
+
       // choose elements to apply style / class to
-      elements = document.getElementsByClassName("sps"),
+      elements = document.getElementsByClassName(spsClass),
 
       // style / class to apply to elements when above scroll position
       classAbove = "sps--abv",
 
       // style / class to apply to elements when below scroll position
-      classBelow = "sps--blw";
+      classBelow = "sps--blw",
 
       // tag to set custom scroll offset per element
       offsetTag = "data-sps-offset";
@@ -94,11 +97,30 @@ var ScrollPosStyler = (function(document, window) {
 
   /* ====================
    * public function to initially style elements based on scroll position
+   *
+   * Options:
+   *    scrollOffsetY (integer): Default scroll position to trigger the style. Default is 1.
+   *    spsClass (String): Classname used to determine which elements to style. Default is 'sps'.
+   *    classAbove (String): Classname added to the elements when the window is scrolled above the defined position. Default is 'sps--abv'.
+   *    classBelow (String): Classname added to the elements when the window is scrolled below the defined position. Default is 'sps--blw'.
+   *    offsetTag (String): HTML tag used on the element to speciify a scrollOffsetY other than the default.
+   *
    * ==================== */
   var pub = {
-    init: function() {
+    init: function(options) {
       // suspend accepting scroll events
       busy = true;
+
+      if (options) {
+          if (options.spsClass) {
+              spsClass = options.spsClass;
+              elements = document.getElementsByClassName(spsClass);
+          }
+          scrollOffsetY = options.scrollOffsetY || scrollOffsetY;
+          classAbove = options.classAbove || classAbove;
+          classBelow = options.classBelow || classBelow;
+          offsetTag = options.offsetTag || offsetTag;
+      }
 
       var elementsToUpdate = getElementsToUpdate();
 
