@@ -99,7 +99,7 @@ var ScrollPosStyler = (function(document, window) {
    * public function to initially style elements based on scroll position
    *
    * Options:
-   *    scrollOffsetY (integer): Default scroll position to trigger the style. Default is 1.
+   *    scrollOffsetY (number): Default scroll position to trigger the style. Default is 1.
    *    spsClass (String): Classname used to determine which elements to style. Default is 'sps'.
    *    classAbove (String): Classname added to the elements when the window is scrolled above the defined position. Default is 'sps--abv'.
    *    classBelow (String): Classname added to the elements when the window is scrolled below the defined position. Default is 'sps--blw'.

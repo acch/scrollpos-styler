@@ -39,6 +39,16 @@ You should add the `.sps--abv` class to the element in your HTML code already, t
 
 To style elements which were created after the page was initially loaded (i.e. using JavaScript), a public initialization function is available. Simply run `ScrollPosStyler.init()` to add the appropriate class based on the current scroll position. [Demo2](http://acch.github.io/scrollpos-styler/demo/demo2.html) shows you this in action.
 
+The following options can be used in `ScrollPosStyler.init()`:
+
+Name | Type | Default | Description
+--- | --- | --- | ---
+scrollOffsetY | number | 1 | Default scroll position to trigger the style.
+spsClass | string | 'sps' | Classname used to determine which elements to style.
+classAbove | string | 'sps--abv' | Classname added to the elements when the window is scrolled above the defined position.
+classBelow | string | 'sps--blw' | Classname added to the elements when the window is scrolled below the defined position. Default is 'sps--blw'.
+offsetTag | string | 'data-sps-offset' | HTML tag used on the element to speciify a scrollOffsetY other than the default.
+
 ### Dependencies
 
 None. The script does not require jQuery or other JavaScript libraries. While being designed for Bootstrap, it does not require it.
