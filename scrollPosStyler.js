@@ -1,5 +1,5 @@
 /* ========================================================================
- * ScrollPos-Styler v0.6
+ * ScrollPos-Styler v0.6.2
  * https://github.com/acch/scrollpos-styler
  * ========================================================================
  * Copyright 2015 Achim Christ
@@ -17,20 +17,24 @@ var ScrollPosStyler = (function(document, window) {
    * ==================== */
   var scrollPosY = 0,
       busy = false,
-      onTop = true,
 
       // toggle style / class when scrolling below this position (in px)
       scrollOffsetY = 1,
 
+      // class used to apply scrollPosStyler to
+      spsClass = "sps",
+
       // choose elements to apply style / class to
-      elements = document.getElementsByClassName("sps"),
+      elements = document.getElementsByClassName(spsClass),
 
       // style / class to apply to elements when above scroll position
       classAbove = "sps--abv",
 
       // style / class to apply to elements when below scroll position
-      classBelow = "sps--blw";
+      classBelow = "sps--blw",
 
+      // tag to set custom scroll offset per element
+      offsetTag = "data-sps-offset";
 
   /* ====================
    * private funcion to check scroll position
@@ -39,93 +43,93 @@ var ScrollPosStyler = (function(document, window) {
     // ensure that events don't stack
     if (!busy) {
       // get current scroll position from window
-      scrollPosY = window.pageYOffset;
+    //   scrollPosY = window.pageYOffset;
 
-      // if we were above, and are now below scroll position...
-      if (onTop && scrollPosY > scrollOffsetY) {
-        // suspend accepting scroll events
-        busy = true;
+      var elementsToUpdate = getElementsToUpdate();
 
-        // remember that we are below scroll position
-        onTop = false;
-
-        // asynchronuously add style / class to elements
-        window.requestAnimationFrame(belowScrollPos);
-
-      // if we were below, and are now above scroll position...
-      } else if (!onTop && scrollPosY <= scrollOffsetY) {
-        // suspend accepting scroll events
-        busy = true;
-
-        // remember that we are above scroll position
-        onTop = true;
-
-        // asynchronuously add style / class to elements
-        window.requestAnimationFrame(aboveScrollPos);
+      if (elementsToUpdate.length > 0) {
+          busy = true;
+          window.requestAnimationFrame(function() {
+              updateElements(elementsToUpdate);
+          });
       }
     }
   }
 
-
-  /* ====================
-   * private function to style elements when above scroll position
-   * ==================== */
-  function aboveScrollPos() {
-    // iterate over elements
-    // for (var elem of elements) {
-    for (var i = 0; elements[i]; ++i) { // chrome workaround
-      // add style / class to element
-      elements[i].classList.add(classAbove);
-      elements[i].classList.remove(classBelow);
-    }
-
-    // resume accepting scroll events
-    busy = false;
-  }
-
-  /* ====================
-   * private function to style elements when below scroll position
-   * ==================== */
-  function belowScrollPos() {
-    // iterate over elements
-    // for (var elem of elements) {
-    for (var i = 0; elements[i]; ++i) { // chrome workaround
-      // add style / class to element
-      elements[i].classList.add(classBelow);
-      elements[i].classList.remove(classAbove);
-    }
-
-    // resume accepting scroll events
-    busy = false;
-  }
-
-
-  /* ====================
-   * public function to initially style elements based on scroll position
-   * ==================== */
-  var pub = {
-    init: function() {
-      // suspend accepting scroll events
-      busy = true;
-
+  function getElementsToUpdate() {
       // get current scroll position from window
       scrollPosY = window.pageYOffset;
 
-      // if we are below scroll position...
-      if (scrollPosY > scrollOffsetY) {
-        // remember that we are below scroll position
-        onTop = false;
+      var elementsToUpdate = [];
 
-        // asynchronuously add style / class to elements
-        window.requestAnimationFrame(belowScrollPos);
+      for (var i = 0; elements[i]; ++i) { // chrome workaround
+          var element = elements[i];
 
-      // if we are above scroll position...
-      } else { // (scrollPosY <= scrollOffsetY)
-        // remember that we are above scroll position
-        onTop = true;
+          var elScrollOffsetY = element.getAttribute(offsetTag) || scrollOffsetY;
+          var elOnTop = element.classList.contains(classAbove);
 
-        // asynchronuously add style / class to elements
-        window.requestAnimationFrame(aboveScrollPos);
+          if (elOnTop && scrollPosY > elScrollOffsetY) {
+              elementsToUpdate.push({
+                 element: element,
+                 addClass: classBelow,
+                 removeClass: classAbove
+              });
+          } else if (!elOnTop && scrollPosY <= elScrollOffsetY) {
+              elementsToUpdate.push({
+                 element: element,
+                 addClass: classAbove,
+                 removeClass: classBelow
+              });
+          }
+      }
+
+      return elementsToUpdate;
+  }
+
+  function updateElements(elementsToUpdate) {
+      for (var i = 0; elementsToUpdate[i]; ++i) { // chrome workaround
+          var map = elementsToUpdate[i];
+          map.element.classList.add(map.addClass);
+          map.element.classList.remove(map.removeClass);
+      }
+      busy = false;
+  }
+
+  /* ====================
+   * public function to initially style elements based on scroll position
+   *
+   * Options:
+   *    scrollOffsetY (number): Default scroll position to trigger the style. Default is 1.
+   *    spsClass (String): Classname used to determine which elements to style. Default is 'sps'.
+   *    classAbove (String): Classname added to the elements when the window is scrolled above the defined position. Default is 'sps--abv'.
+   *    classBelow (String): Classname added to the elements when the window is scrolled below the defined position. Default is 'sps--blw'.
+   *    offsetTag (String): HTML tag used on the element to speciify a scrollOffsetY other than the default.
+   *
+   * ==================== */
+  var pub = {
+    init: function(options) {
+      // suspend accepting scroll events
+      busy = true;
+
+      if (options) {
+          if (options.spsClass) {
+              spsClass = options.spsClass;
+              elements = document.getElementsByClassName(spsClass);
+          }
+          scrollOffsetY = options.scrollOffsetY || scrollOffsetY;
+          classAbove = options.classAbove || classAbove;
+          classBelow = options.classBelow || classBelow;
+          offsetTag = options.offsetTag || offsetTag;
+      }
+
+      var elementsToUpdate = getElementsToUpdate();
+
+      if (elementsToUpdate.length > 0) {
+          window.requestAnimationFrame(function() {
+              updateElements(elementsToUpdate);
+          });
+      } else {
+          busy = false;
       }
     }
   };
