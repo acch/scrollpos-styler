@@ -57,6 +57,9 @@ var ScrollPosStyler = (function(document, window) {
     }
   }
 
+  /* ====================
+   * private funcion to find elements to update
+   * ==================== */
   function getElementsToUpdate() {
     // get current scroll position from window
     scrollPosY = window.pageYOffset;
@@ -97,6 +100,9 @@ var ScrollPosStyler = (function(document, window) {
     return elementsToUpdate;
   }
 
+  /* ====================
+   * private funcion to update elements
+   * ==================== */
   function updateElements(elementsToUpdate) {
     // iterate over elements
     // for (var elem of elements) {
