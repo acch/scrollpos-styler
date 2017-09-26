@@ -4,7 +4,8 @@
   "description": "JavaScript to add custom CSS class to a HTML element depending on scroll position",
   "main": "scrollPosStyler.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "uglifyjs scrollPosStyler.js -c -m --comments -o scrollPosStyler.min.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/acch/scrollpos-styler/issues"
   },
-  "homepage": "https://github.com/acch/scrollpos-styler#readme"
+  "homepage": "https://github.com/acch/scrollpos-styler#readme",
+  "devDependencies": {
+    "uglify-js": "^3.1.1"
+  }
 }
