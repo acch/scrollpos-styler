@@ -145,6 +145,7 @@ var ScrollPosStyler = (function (document, window) {
      *    classAbove (String): Classname added to the elements when the window is scrolled above the defined position. Default is 'sps--abv'.
      *    classBelow (String): Classname added to the elements when the window is scrolled below the defined position. Default is 'sps--blw'.
      *    offsetTag (String): HTML tag used on the element to specify a scrollOffsetY other than the default.
+     *    iterations (number): number of iterations of the element with the scroll.
      *
      * ==================== */
     var pub = {
