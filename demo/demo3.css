@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+}
+
+body {
+  font-family: Helvetical, Arial, sans-serif;
+  font-size: 22px;
+  background-color: #fff;
+  color: #000;
+  padding-top: 2em;
+}
+
+.main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+nav.sps {
+  padding: .5em;
+  margin-top: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+nav.sps--abv {
+  background-color: transparent;
+  color: #000;
+}
+
+nav.sps--blw {
+  background-color: #333;
+  color: #fff;
+}
+
+p.sps {
+  display: block;
+  padding: 0;
+  margin-bottom: 1em;
+  transition: all 0.25s ease-in-out;
+}
+
+p.sps--abv {
+  margin-top: 50px;
+  padding: 1em;
+  color: #fff;
+}
+
+p.sps--blw {
+  margin-top: 0;
+  padding: 1em;
+  color: #333;
+}
+p.end-spacer-fix {
+  height: 300px;
+  content: " ";
+}
