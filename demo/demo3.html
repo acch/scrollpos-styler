@@ -53,11 +53,13 @@
           In sit amet nisl eleifend, fringilla nulla at, mattis metus. Vestibulum condimentum, dui et pellentesque fermentum, arcu ante scelerisque lacus, at mollis urna ligula at dui. Curabitur feugiat dui risus. Fusce sollicitudin ac nibh sed bibendum. Aliquam euismod varius urna, a lobortis dolor. Integer interdum libero id ornare dignissim. Aenean vitae metus dolor. Aliquam ac scelerisque purus, rhoncus varius elit. Aliquam posuere orci at purus condimentum, ac cursus ante iaculis. In rutrum porttitor consequat. Quisque et porta sapien. Nam turpis metus, viverra nec porttitor vitae, laoreet nec libero. Fusce vel sem id enim volutpat ultricies sit amet sit amet elit.
         </p><p class="animated sps sps--abv">
           Sed dictum maximus tellus, et luctus nibh rhoncus vel. Etiam at mi ac lorem egestas feugiat. Morbi semper est non arcu cursus, ut ullamcorper arcu rutrum. Aliquam at sodales erat. Morbi fermentum feugiat elementum. Phasellus nec blandit eros, sed sagittis purus. Nam a augue mi. Nullam ac interdum elit. Pellentesque condimentum imperdiet orci, eget faucibus urna condimentum sed. Praesent egestas lacus vitae mollis aliquam. Maecenas rhoncus nibh non sem molestie, nec semper leo convallis. Cras vel libero eros.
+        </p><p class="animated sps sps--abv">
+          Footer of the file. 
         </p>
-        <p class="end-spacer-fix"><hr></p>
+        <p class="organic-offset-endfile"><hr></p>
       </article>
   </div>
-    <script src="../scrollPosStyler.js"></script>
+    <script src="../scrollPosStyler.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>
       function relative_offset($element)
@@ -65,7 +67,7 @@
         var current_offset = $element.offset(),
           screen_offset = Math.max(document.documentElement.clientHeight, window.innerHeight || 0),
           //.10 is realy relative to the use. Must be parametrable.
-          organic_offset = Math.round(screen_offset*.10),
+          organic_offset = Math.round(screen_offset*.1),
           absolute_offset = Math.round(current_offset.top);
 
         $element.attr("data-sps-offset", (absolute_offset - screen_offset + organic_offset ));
