@@ -62,6 +62,12 @@ If you need to support older browsers then these links may provide valuable info
 - http://stackoverflow.com/questions/195951/change-an-elements-class-with-javascript
 - https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
 
+## Examples
+
+The script can be used for more than just styling a static navbar. The following list provides additional usage examples for those seeking some inspiration:
+
+-  [Demo3](http://acch.github.io/scrollpos-styler/demo/demo3.html) shows how to style relative offsets &mdash; thanks to [@mamarmite](https://github.com/mamarmite)
+
 ## Copyright and license
 
 Copyright 2015 Achim Christ, released under the [MIT license](LICENSE).
