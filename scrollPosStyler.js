@@ -1,7 +1,7 @@
 /**
  * @license
  * ========================================================================
- * ScrollPos-Styler v0.7.0
+ * ScrollPos-Styler v0.7.1
  * https://github.com/acch/scrollpos-styler
  * ========================================================================
  * Copyright 2015 Achim Christ
