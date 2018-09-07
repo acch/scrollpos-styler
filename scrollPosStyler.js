@@ -45,7 +45,7 @@ var ScrollPosStyler = (function(document, window) {
     // ensure that events don't stack
     if (!busy) {
       // find elements to update
-      var elementsToUpdate = getElementsToUpdate();
+      var elementsToUpdate = getElementsToUpdate(false);
 
       if (elementsToUpdate.length > 0) {
         // suspend accepting scroll events
@@ -62,7 +62,7 @@ var ScrollPosStyler = (function(document, window) {
   /* ====================
    * private funcion to find elements to update
    * ==================== */
-  function getElementsToUpdate() {
+  function getElementsToUpdate(init) {
     // get current scroll position from window
     scrollPosY = window.pageYOffset;
 
@@ -80,7 +80,7 @@ var ScrollPosStyler = (function(document, window) {
       var elOnTop = element.classList.contains(classAbove);
 
       // if we were above, and are now below scroll position...
-      if (elOnTop && scrollPosY > elScrollOffsetY) {
+      if ((init || elOnTop) && scrollPosY > elScrollOffsetY) {
         // remember element
         elementsToUpdate.push({
           element: element,
@@ -89,7 +89,7 @@ var ScrollPosStyler = (function(document, window) {
         });
 
       // if we were below, and are now above scroll position...
-      } else if (!elOnTop && scrollPosY <= elScrollOffsetY) {
+      } else if ((init || !elOnTop) && scrollPosY <= elScrollOffsetY) {
         // remember element
         elementsToUpdate.push({
           element: element,
@@ -148,8 +148,8 @@ var ScrollPosStyler = (function(document, window) {
         offsetTag = options.offsetTag || offsetTag;
       }
 
-      // find elements to update
-      var elementsToUpdate = getElementsToUpdate();
+      // ensure all elements have classAbove
+      var elementsToUpdate = getElementsToUpdate(true);
 
       if (elementsToUpdate.length > 0) {
         // asynchronuously update elements
