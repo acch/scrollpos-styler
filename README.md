@@ -1,5 +1,7 @@
 # ScrollPos-Styler
 
+[![GitHub Issues](https://img.shields.io/github/issues/acch/scrollpos-styler.svg)](https://github.com/acch/scrollpos-styler/issues) [![GitHub Stars](https://img.shields.io/github/stars/acch/scrollpos-styler.svg?label=github%20%E2%98%85)](https://github.com/acch/scrollpos-styler/) [![NPM Downloads](https://img.shields.io/npm/dw/scrollpos-styler.svg)](https://www.npmjs.com/package/scrollpos-styler) [![License](https://img.shields.io/github/license/acch/scrollpos-styler.svg)](LICENSE)
+
 Simple JavaScript to add a custom CSS class to an HTML element depending on the window's scroll position. One CSS class is added when scrolling below a certain position, and another one is added when scrolling above that position.
 
 ## Background and Motivation
